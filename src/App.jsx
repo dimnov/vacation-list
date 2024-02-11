@@ -6,6 +6,7 @@ import Stats from "./components/Stats.jsx";
 export default function App() {
   return (
     <div className="app">
+      <Logo />
     </div>
   );
 }
