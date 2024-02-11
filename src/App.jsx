@@ -9,6 +9,7 @@ export default function App() {
       <Logo />
       <Form />
       <PackingList />
+      <Stats />
     </div>
   );
 }
