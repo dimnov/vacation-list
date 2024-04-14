@@ -15,12 +15,24 @@ export default function App() {
   setItems((items) => items.filter((item) => item.id !== itemId));
  }
 
+ function handleToggleItem(itemId) {
+  setItems((items) =>
+   items.map((item) =>
+    item.id === itemId ? { ...item, packed: !item.packed } : item
+   )
+  );
+ }
+
  return (
   <div className="app">
    <Logo />
    <Form onAddItems={handleAddItems} />
-   <PackingList onDeleteItem={handleDeleteItem} items={items} />
-   <Stats />
+   <PackingList
+    onToggleItem={handleToggleItem}
+    onDeleteItem={handleDeleteItem}
+    items={items}
+   />
+   <Stats items={items} />
   </div>
  );
 }
